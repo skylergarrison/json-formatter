@@ -242,6 +242,12 @@
           // Create a span for the key name
             keySpan = templates.t_key.cloneNode(false) ;
             keySpan.textContent = JSON.stringify(keyName).slice(1,-1) ; // remove quotes
+            // Adding an id to be able to highlight the git tag
+            console.log(keySpan.textContent);
+            if (keySpan.textContent == 'git_tag') {
+              console.log('we are adding a git tag id');
+              keySpan.setAttribute("id", "git_tag");
+            }
           // Add it to kvov, with quote marks
             kvov.appendChild(templates.t_dblqText.cloneNode(false)) ;
             kvov.appendChild( keySpan ) ;
